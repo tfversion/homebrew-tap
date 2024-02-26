@@ -5,21 +5,21 @@
 class Tfversion < Formula
   desc "A simple tool to manage Terraform versions"
   homepage "https://github.com/tfversion/tfversion"
-  version "0.0.8"
+  version "0.0.9"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/tfversion/tfversion/releases/download/v0.0.8/tfversion_0.0.8_darwin_amd64.tar.gz"
-      sha256 "8be2e495979dd74bb752d92e93f2d62aa1d61e195cc217a160b55110225c2d5c"
+    if Hardware::CPU.arm?
+      url "https://github.com/tfversion/tfversion/releases/download/v0.0.9/tfversion_0.0.9_darwin_arm64.tar.gz"
+      sha256 "b08ab0e1eb94268eee3ab1116a61f101ec289daa29e03dbfb5f3d1e43038d3e6"
 
       def install
         bin.install "tfversion"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/tfversion/tfversion/releases/download/v0.0.8/tfversion_0.0.8_darwin_arm64.tar.gz"
-      sha256 "8cad3ba575c05d746c1b58b8a67736e463887605253e9045ff03aeed3e9d4538"
+    if Hardware::CPU.intel?
+      url "https://github.com/tfversion/tfversion/releases/download/v0.0.9/tfversion_0.0.9_darwin_amd64.tar.gz"
+      sha256 "cad0d2874e8dac6e16e0adccf48c5057021299b5e490507dd8458a2045e8d4c3"
 
       def install
         bin.install "tfversion"
@@ -29,16 +29,16 @@ class Tfversion < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tfversion/tfversion/releases/download/v0.0.8/tfversion_0.0.8_linux_arm64.tar.gz"
-      sha256 "adb4c6dfc62731a8b03ee7fe43a9bdfecb38f834b39e513ec0b5aeddff8820e0"
+      url "https://github.com/tfversion/tfversion/releases/download/v0.0.9/tfversion_0.0.9_linux_arm64.tar.gz"
+      sha256 "be3db23cec8398392ae0a12fc950f9d9411072781be8273a597d895ddb37adb0"
 
       def install
         bin.install "tfversion"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tfversion/tfversion/releases/download/v0.0.8/tfversion_0.0.8_linux_amd64.tar.gz"
-      sha256 "61894c2235f2e40681651b74f57984e2aaf8d1a0258104194a0d14535a91d488"
+      url "https://github.com/tfversion/tfversion/releases/download/v0.0.9/tfversion_0.0.9_linux_amd64.tar.gz"
+      sha256 "3b452e9299e921ed83cf8c9131c36e4c84c355ee47a0610abc1658f37493b6d6"
 
       def install
         bin.install "tfversion"
